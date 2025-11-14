@@ -113,7 +113,9 @@ nav {
     transition: 0.3s;
 }
 
-/* 深色轮播图样式 - 首页专用 */
+/* ========== 首页专用样式 ========== */
+
+/* 深色轮播图样式 */
 .hero-slider {
     position: relative;
     height: 80vh;
@@ -241,48 +243,7 @@ nav {
     right: 20px;
 }
 
-/* 页面横幅 - 内页专用 */
-.page-main {
-    margin-top: 70px;
-}
-
-.page-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-}
-
-.page-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(200, 169, 126, 0.1), transparent);
-}
-
-.page-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-
-.page-hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-
-/* 深色服务概览样式 - 首页专用 */
+/* 深色服务概览样式 */
 .services-preview {
     padding: 80px 0;
     background: #1a1a1a;
@@ -344,7 +305,7 @@ nav {
     line-height: 1.6;
 }
 
-/* 深色精选案例样式 - 首页专用 */
+/* 深色精选案例样式 */
 .featured-cases {
     padding: 80px 0;
     background: #121212;
@@ -439,7 +400,7 @@ nav {
     background: linear-gradient(135deg, #b8945f, #c8a97e);
 }
 
-/* 深色公司优势样式 - 首页专用 */
+/* 深色公司优势样式 */
 .advantages {
     padding: 80px 0;
     background: #1a1a1a;
@@ -495,7 +456,51 @@ nav {
     line-height: 1.6;
 }
 
-/* 深色关于我们页面特定样式 - 内页专用 */
+/* ========== 内页通用样式 ========== */
+
+/* 页面横幅 */
+.page-main {
+    margin-top: 70px;
+}
+
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(200, 169, 126, 0.1), transparent);
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* ========== 关于我们页面专用样式 ========== */
+
 .about-content {
     padding: 80px 0;
     background: #121212;
@@ -783,7 +788,232 @@ nav {
     line-height: 1.6;
 }
 
-/* 深色页脚样式 */
+/* ========== 服务项目页面专用样式 ========== */
+
+.services-detail {
+    padding: 80px 0;
+    background: #121212;
+}
+
+.service-category {
+    margin-bottom: 80px;
+}
+
+.service-category h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+}
+
+.service-category h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #c8a97e;
+    margin: 15px auto 0;
+}
+
+.service-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.service-detail-item {
+    background: #1e1e1e;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+
+.service-detail-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c8a97e, #b8945f);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.service-detail-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.service-detail-item:hover::before {
+    transform: scaleX(1);
+}
+
+.service-detail-item h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.service-detail-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #c8a97e;
+}
+
+.service-detail-item p {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-detail-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-detail-item li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+.service-detail-item li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c8a97e;
+    font-weight: bold;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.process-step {
+    background: #1e1e1e;
+    padding: 40px 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    position: relative;
+    border: 1px solid #2a2a2a;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #c8a97e, #b8945f);
+    color: #121212;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+}
+
+.process-step h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.process-step p {
+    color: #b0b0b0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.service-cta {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), 
+                url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(200, 169, 126, 0.1), transparent);
+}
+
+.service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #c8a97e, #b8945f);
+    color: #121212;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(200, 169, 126, 0.5);
+    background: linear-gradient(135deg, #b8945f, #c8a97e);
+}
+
+/* ========== 通用页脚样式 ========== */
+
 footer {
     background: #0a0a0a;
     color: #b0b0b0;
@@ -840,7 +1070,8 @@ footer {
     color: #888;
 }
 
-/* 响应式设计 - 深色主题 */
+/* ========== 响应式设计 ========== */
+
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -936,19 +1167,23 @@ footer {
         font-size: 1rem;
     }
     
-    .about-content {
+    .about-content,
+    .services-detail {
         padding: 60px 0;
     }
     
-    .about-intro, .company-values, .team-section, .development-history {
+    .about-intro, .company-values, .team-section, .development-history,
+    .service-category {
         margin-bottom: 60px;
     }
     
-    .about-intro h2, .company-values h2, .team-section h2, .development-history h2 {
+    .about-intro h2, .company-values h2, .team-section h2, .development-history h2,
+    .service-category h2 {
         font-size: 1.8rem;
     }
     
-    .values-grid {
+    .values-grid,
+    .service-items {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -956,6 +1191,36 @@ footer {
     .team-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .service-detail-item {
+        padding: 30px 20px;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .process-step {
+        padding: 30px 20px;
+    }
+    
+    .service-cta {
+        padding: 60px 0;
+    }
+    
+    .service-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .service-cta p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
     }
     
     .timeline::before {
