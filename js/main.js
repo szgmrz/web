@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 导航栏滚动效果
+    /*
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.backdropFilter = 'none';
         }
     });
+    */
 
     // 平滑滚动（为未来添加锚点链接做准备）
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
