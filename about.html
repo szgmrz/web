@@ -126,34 +126,18 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>建装冠美软装</h3>
-                    <p>专业软装设计艺术公司，致力于为客户打造理想的生活与工作空间。</p>
-                </div>
-                <div class="footer-section">
-                    <h3>联系方式</h3>
-                    <p>电话: 0755-8888 8888</p>
-                    <p>邮箱: info@szjzgm.com</p>
-                    <p>地址: 深圳市南山区科技园</p>
-                </div>
-                <div class="footer-section">
-                    <h3>快速链接</h3>
-                    <a href="index.html">首页</a>
-                    <a href="about.html">关于我们</a>
-                    <a href="services.html">服务项目</a>
-                    <a href="cases.html">案例展示</a>
-                    <a href="contact.html">联系我们</a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 深圳市建装冠美软装艺术有限公司. 版权所有.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- 页脚引用 -->
+    <div id="footer-container"></div>
 
     <script src="js/main.js"></script>
+
+    <script>
+        // 加载页脚
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
