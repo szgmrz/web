@@ -897,9 +897,10 @@ nav {
     font-weight: bold;
 }
 
+/* 专业服务流程布局 - 一行3个，共2行 */
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -911,12 +912,30 @@ nav {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: all 0.3s;
     position: relative;
+    overflow: hidden;
     border: 1px solid #2a2a2a;
+}
+
+/* 专业服务流程悬停效果 - 与商业空间设计部分保持一致 */
+.process-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c8a97e, #b8945f);
+    transform: scaleX(0);
+    transition: transform 0.3s;
 }
 
 .process-step:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.process-step:hover::before {
+    transform: scaleX(1);
 }
 
 .step-number {
@@ -1755,8 +1774,9 @@ footer {
         padding: 30px 20px;
     }
     
+    /* 专业服务流程响应式 - 改为2列 */
     .process-steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
     
@@ -1910,6 +1930,12 @@ footer {
     
     .filter-btn {
         width: 200px;
+    }
+    
+    /* 专业服务流程响应式 - 改为1列 */
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .contact-item,
