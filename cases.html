@@ -7,25 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>冠美软装</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="about.html">关于我们</a></li>
-                <li><a href="services.html">服务项目</a></li>
-                <li><a href="cases.html" class="active">案例展示</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <div id="header-container"></div>
 
     <main class="page-main">
         <section class="page-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
@@ -169,6 +151,33 @@
     <script src="js/main.js"></script>
 
     <script>
+
+        // 加载导航栏
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // 设置当前页面导航激活状态
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (currentPage === linkHref) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // 移动端菜单切换
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            });
+
         // 加载页脚
         fetch('footer.html')
             .then(response => response.text())
