@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我们 - 深圳市建装冠美软装艺术有限公司</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_about.css">
 </head>
 <body>
-    <!-- 导航栏容器 -->
-    <div id="header-container"></div>
-
     <main class="page-main">
-        <section class="page-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('./images/about-hero.jpg')">
+        <section class="page-hero">
             <div class="container">
                 <h1>关于我们</h1>
                 <p>专业软装设计艺术公司</p>
@@ -23,33 +19,166 @@
             <div class="container">
                 <div class="about-intro">
                     <h2>公司简介</h2>
-                    <P>
+                    <p>
                         深圳市建装冠美软装艺术有限公司成立于2015年，是一家以设计为核心的综合性软装服务商。我们专注于酒店、办公、售楼处等商业与高端住宅空间，
                         提供从设计到落地的一站式整体解决方案，确保每个项目的风格与品质，助力客户实现理想的商业与生活场景。
-                    </P>
+                    </p>
                 </div>
 
                 <div class="team-section">
                     <h2>设计团队</h2>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="member-photo"></div>
-                            <h3>何元丽</h3>
-                            <p>软装设计总监</p>
-                            <p>国际注册高级软装设计师</p>
-                            <p>10年软装设计经验，擅长现代简约风格</p>
+                    <div class="team-container">
+                        <div class="team-tabs">
+                            <div class="team-tab active" data-tab="all">全部成员</div>
+                            <div class="team-tab" data-tab="leadership">管理团队</div>
+                            <div class="team-tab" data-tab="designers">设计团队</div>
+                            <div class="team-tab" data-tab="specialists">专业顾问</div>
                         </div>
-                        <div class="team-member">
-                            <div class="member-photo"></div>
-                            <h3>文苡</h3>
-                            <p>首席设计师</p>
-                            <p>8年设计经验，专注商业空间设计</p>
-                        </div>
-                        <div class="team-member">
-                            <div class="member-photo"></div>
-                            <h3>王慧</h3>
-                            <p>资深设计师</p>
-                            <p>6年住宅设计经验，精通色彩搭配</p>
+                        
+                        <div class="team-list">
+                            <div class="team-member-list" data-category="leadership">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="何元丽">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>何元丽</h3>
+                                        <div class="member-position-list">软装设计总监</div>
+                                    </div>
+                                    <div class="member-desc-list">国际注册高级软装设计师，10年软装设计经验</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">现代简约</span>
+                                        <span class="expertise-tag-list">商业空间</span>
+                                        <span class="expertise-tag-list">高端住宅</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="designers">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="文苡">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>文苡</h3>
+                                        <div class="member-position-list">首席设计师</div>
+                                    </div>
+                                    <div class="member-desc-list">8年设计经验，专注商业空间设计</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">商业空间</span>
+                                        <span class="expertise-tag-list">酒店设计</span>
+                                        <span class="expertise-tag-list">办公空间</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="designers">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" alt="王慧">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>王慧</h3>
+                                        <div class="member-position-list">资深设计师</div>
+                                    </div>
+                                    <div class="member-desc-list">6年住宅设计经验，精通色彩搭配</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">住宅设计</span>
+                                        <span class="expertise-tag-list">色彩搭配</span>
+                                        <span class="expertise-tag-list">软装搭配</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="designers">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="张伟">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>张伟</h3>
+                                        <div class="member-position-list">高级设计师</div>
+                                    </div>
+                                    <div class="member-desc-list">7年设计经验，专注酒店空间设计</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">酒店设计</span>
+                                        <span class="expertise-tag-list">中西融合</span>
+                                        <span class="expertise-tag-list">空间规划</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="leadership">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="李娜">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>李娜</h3>
+                                        <div class="member-position-list">创意总监</div>
+                                    </div>
+                                    <div class="member-desc-list">9年设计经验，专注高端住宅设计</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">高端住宅</span>
+                                        <span class="expertise-tag-list">材料工艺</span>
+                                        <span class="expertise-tag-list">创新设计</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="leadership">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="刘洋">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>刘洋</h3>
+                                        <div class="member-position-list">项目总监</div>
+                                    </div>
+                                    <div class="member-desc-list">8年项目管理经验，擅长大型商业项目统筹</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">项目管理</span>
+                                        <span class="expertise-tag-list">商业项目</span>
+                                        <span class="expertise-tag-list">团队协调</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="designers">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="陈静">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>陈静</h3>
+                                        <div class="member-position-list">资深设计师</div>
+                                    </div>
+                                    <div class="member-desc-list">5年设计经验，专注办公空间设计</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">办公空间</span>
+                                        <span class="expertise-tag-list">现代简约</span>
+                                        <span class="expertise-tag-list">工业风</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member-list" data-category="specialists">
+                                <div class="member-photo-list">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="赵磊">
+                                </div>
+                                <div class="member-info-list">
+                                    <div class="member-header">
+                                        <h3>赵磊</h3>
+                                        <div class="member-position-list">灯光设计师</div>
+                                    </div>
+                                    <div class="member-desc-list">6年灯光设计经验，精通商业空间灯光氛围营造</div>
+                                    <div class="member-expertise-list">
+                                        <span class="expertise-tag-list">灯光设计</span>
+                                        <span class="expertise-tag-list">氛围营造</span>
+                                        <span class="expertise-tag-list">智能照明</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,43 +242,32 @@
         </section>
     </main>
 
-    <!-- 页脚引用 -->
-    <div id="footer-container"></div>
-
-    <script src="js/main.js"></script>
-
     <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                
-                // 设置当前页面导航激活状态
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                const navLinks = document.querySelectorAll('.nav-menu a');
-                navLinks.forEach(link => {
-                    const linkHref = link.getAttribute('href');
-                    if (currentPage === linkHref) {
-                        link.classList.add('active');
-                    }
-                });
-                
-                // 移动端菜单切换
-                const menuToggle = document.querySelector('.menu-toggle');
-                const navMenu = document.querySelector('.nav-menu');
-                
-                menuToggle.addEventListener('click', () => {
-                    menuToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
+        // 团队筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.team-tab');
+            const members = document.querySelectorAll('.team-member-list');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除所有标签的active类
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // 为当前点击的标签添加active类
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-tab');
+                    
+                    // 显示/隐藏团队成员
+                    members.forEach(member => {
+                        if (category === 'all' || member.getAttribute('data-category') === category) {
+                            member.style.display = 'flex';
+                        } else {
+                            member.style.display = 'none';
+                        }
+                    });
                 });
             });
-
-        // 加载页脚
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
+        });
     </script>
 </body>
 </html>
