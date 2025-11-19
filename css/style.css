@@ -534,77 +534,7 @@ nav {
     color: #b0b0b0;
 }
 
-.company-values {
-    margin-bottom: 80px;
-}
-
-.company-values h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-    color: #ffffff;
-    position: relative;
-}
-
-.company-values h2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: #c8a97e;
-    margin: 15px auto 0;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.value-item {
-    background: #1e1e1e;
-    padding: 40px 30px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
-    border: 1px solid #2a2a2a;
-    position: relative;
-    overflow: hidden;
-}
-
-.value-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #c8a97e, #b8945f);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-}
-
-.value-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.value-item:hover::before {
-    transform: scaleX(1);
-}
-
-.value-item h3 {
-    color: #c8a97e;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.value-item p {
-    color: #b0b0b0;
-    line-height: 1.6;
-}
-
+/* 设计团队 - 新样式 */
 .team-section {
     margin-bottom: 80px;
 }
@@ -626,6 +556,156 @@ nav {
     margin: 15px auto 0;
 }
 
+.team-container {
+    position: relative;
+}
+
+.team-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.team-tab {
+    padding: 12px 25px;
+    background: #1e1e1e;
+    border: 2px solid #2a2a2a;
+    border-radius: 30px;
+    color: #b0b0b0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.team-tab:hover {
+    border-color: #c8a97e;
+    color: #c8a97e;
+    background: rgba(200, 169, 126, 0.1);
+}
+
+.team-tab.active {
+    background: linear-gradient(135deg, #c8a97e, #b8945f);
+    border-color: #c8a97e;
+    color: #121212;
+    box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+}
+
+/* 团队成员列表布局 */
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.team-member-list {
+    display: flex;
+    align-items: center;
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border: 1px solid #2a2a2a;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c8a97e, #b8945f);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.team-member-list:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.team-member-list:hover::before {
+    transform: scaleX(1);
+}
+
+.member-photo-list {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px;
+    flex-shrink: 0;
+    border: 3px solid #2a2a2a;
+    transition: all 0.3s;
+}
+
+.team-member-list:hover .member-photo-list {
+    border-color: #c8a97e;
+    box-shadow: 0 0 20px rgba(200, 169, 126, 0.3);
+}
+
+.member-photo-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info-list {
+    flex: 1;
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.member-header h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.member-position-list {
+    background: rgba(200, 169, 126, 0.1);
+    color: #c8a97e;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+}
+
+.member-desc-list {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.member-expertise-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.expertise-tag-list {
+    background: rgba(200, 169, 126, 0.1);
+    color: #c8a97e;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+}
+
+/* 原有团队网格布局 */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -698,6 +778,77 @@ nav {
 .team-member p:last-child {
     margin-bottom: 25px;
     font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.company-values {
+    margin-bottom: 80px;
+}
+
+.company-values h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+}
+
+.company-values h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #c8a97e;
+    margin: 15px auto 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-item {
+    background: #1e1e1e;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border: 1px solid #2a2a2a;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c8a97e, #b8945f);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.value-item:hover::before {
+    transform: scaleX(1);
+}
+
+.value-item h3 {
+    color: #c8a97e;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.value-item p {
+    color: #b0b0b0;
     line-height: 1.6;
 }
 
@@ -912,30 +1063,12 @@ nav {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: all 0.3s;
     position: relative;
-    overflow: hidden;
     border: 1px solid #2a2a2a;
-}
-
-/* 专业服务流程悬停效果 - 与商业空间设计部分保持一致 */
-.process-step::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #c8a97e, #b8945f);
-    transform: scaleX(0);
-    transition: transform 0.3s;
 }
 
 .process-step:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.process-step:hover::before {
-    transform: scaleX(1);
 }
 
 .step-number {
@@ -1821,6 +1954,22 @@ footer {
         width: 100%;
     }
     
+    /* 设计团队新样式响应式 */
+    .team-member-list {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .member-photo-list {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .member-header {
+        justify-content: center;
+    }
+    
     /* 案例展示页响应式 */
     .cases-filter {
         padding: 30px 0;
@@ -1929,6 +2078,15 @@ footer {
     }
     
     .filter-btn {
+        width: 200px;
+    }
+    
+    .team-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-tab {
         width: 200px;
     }
     
