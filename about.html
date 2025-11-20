@@ -45,6 +45,137 @@
             font-size: 0.85rem;
             line-height: 1.4;
         }
+        
+        /* 合作伙伴模块样式 */
+        .partners-section {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .partners-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        .partners-section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #c8a97e;
+            margin: 15px auto 0;
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .partner-logo {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partner-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c8a97e, #b8945f);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .partner-logo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: rgba(200, 169, 126, 0.5);
+        }
+        
+        .partner-logo:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .partner-name {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .partner-logo:hover .partner-name {
+            opacity: 1;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .partners-section {
+                padding: 60px 0;
+            }
+            
+            .partners-section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+            
+            .partners-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 25px;
+            }
+            
+            .partner-logo {
+                padding: 20px;
+                height: 100px;
+            }
+            
+            .partner-logo img {
+                max-height: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -330,59 +461,75 @@
                     </div>
                 </div>
                 
-                <!-- 其余部分保持不变 -->
-                <div class="company-values">
-                    <h2>核心价值观</h2>
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <h3>创新设计</h3>
-                            <p>不断追求设计创新，融合东西方美学理念</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>品质至上</h3>
-                            <p>严格把控材料品质，确保项目完美落地</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>客户满意</h3>
-                            <p>以客户需求为中心，提供个性化解决方案</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>专业团队</h3>
-                            <p>拥有资深设计师团队，提供专业设计服务</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="development-history">
                     <h2>发展历程</h2>
                     <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-year">2010</div>
+                            <div class="timeline-year">2015</div>
                             <div class="timeline-content">
                                 <h3>公司成立</h3>
                                 <p>在深圳正式成立，专注于高端住宅软装设计</p>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-year">2014</div>
+                            <div class="timeline-year">2018</div>
                             <div class="timeline-content">
                                 <h3>业务拓展</h3>
                                 <p>拓展商业空间设计业务，服务多家知名企业</p>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-year">2018</div>
+                            <div class="timeline-year">2022</div>
                             <div class="timeline-content">
                                 <h3>品牌升级</h3>
                                 <p>完成品牌升级，确立行业领先地位</p>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-year">2023</div>
+                            <div class="timeline-year">2025</div>
                             <div class="timeline-content">
                                 <h3>创新发展</h3>
                                 <p>引入智能家居设计，推动行业创新发展</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 新增合作伙伴模块 -->
+                <div class="partners-section">
+                    <h2>合作伙伴</h2>
+                    <div class="partners-grid">
+                        <div class="partner-logo">
+                            <img src="images/partner1.png" alt="冠美集团">
+                            <div class="partner-name">冠美集团</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner2.png" alt="华润置地">
+                            <div class="partner-name">华润置地</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner3.png" alt="招商蛇口">
+                            <div class="partner-name">招商蛇口</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner4.png" alt="华侨城集团">
+                            <div class="partner-name">华侨城集团</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner5.png" alt="金地集团">
+                            <div class="partner-name">金地集团</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner6.png" alt="保利地产">
+                            <div class="partner-name">保利地产</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner7.png" alt="中海地产">
+                            <div class="partner-name">中海地产</div>
+                        </div>
+                        <div class="partner-logo">
+                            <img src="images/partner8.png" alt="万科地产">
+                            <div class="partner-name">万科地产</div>
                         </div>
                     </div>
                 </div>
