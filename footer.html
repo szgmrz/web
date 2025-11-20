@@ -1,258 +1,28 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-        }
-        
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .demo-container {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 30px;
-            background: #1a1a1a;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #2a2a2a;
-        }
-        
-        h1 {
-            text-align: center;
-            color: #c8a97e;
-            margin-bottom: 10px;
-            font-size: 2.2rem;
-        }
-        
-        .subtitle {
-            text-align: center;
-            color: #b0b0b0;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        
-        .description {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #b0b0b0;
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* 页脚样式 */
-        footer {
-            background: #0a0a0a;
-            color: #b0b0b0;
-            padding: 40px 0 20px;
-            border-top: 1px solid #2a2a2a;
-            width: 100%;
-            margin-top: 40px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h3 {
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: #c8a97e;
-        }
-        
-        .footer-section p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-        
-        .contact-icon {
-            margin-right: 10px;
-            font-size: 1.1rem;
-            color: #c8a97e;
-        }
-        
-        .contact-detail {
-            flex: 1;
-        }
-        
-        .contact-label {
-            color: #c8a97e;
-            font-size: 0.9rem;
-            margin-bottom: 3px;
-        }
-        
-        .contact-value {
-            color: #b0b0b0;
-            font-size: 0.95rem;
-        }
-        
-        .partners-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .partner-tag {
-            background: rgba(200, 169, 126, 0.1);
-            color: #c8a97e;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(200, 169, 126, 0.3);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #2a2a2a;
-            color: #888;
-        }
-        
-        .copyright p {
-            margin-bottom: 5px;
-        }
-        
-        .record-info {
-            font-size: 0.85rem;
-            color: #666;
-        }
-        
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .partners-list {
-                gap: 8px;
-            }
-            
-            .partner-tag {
-                font-size: 0.8rem;
-                padding: 4px 10px;
-            }
-        }
-        
-        .code-container {
-            background: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 30px;
-            border: 1px solid #2a2a2a;
-            overflow-x: auto;
-        }
-        
-        .code-container h3 {
-            color: #c8a97e;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        pre {
-            color: #e0e0e0;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            white-space: pre-wrap;
-        }
-    </style>
-</head>
-<body>
-    <div class="demo-container">      
-        <!-- 页脚部分 -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h3>联系我们</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">📞</div>
-                                <div class="contact-detail">
-                                    <div class="contact-label">电话</div>
-                                    <div class="contact-value">13924676068</div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">✉️</div>
-                                <div class="contact-detail">
-                                    <div class="contact-label">邮箱</div>
-                                    <div class="contact-value">879821991@qq.com</div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">📍</div>
-                                <div class="contact-detail">
-                                    <div class="contact-label">地址</div>
-                                    <div class="contact-value">深圳市罗湖区广田集团9楼</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h3>合作单位</h3>
-                        <div class="partners-list">
-                            <span class="partner-tag">万科地产</span>
-                            <span class="partner-tag">华润置地</span>
-                            <span class="partner-tag">招商蛇口</span>
-                            <span class="partner-tag">华侨城集团</span>
-                            <span class="partner-tag">金地集团</span>
-                            <span class="partner-tag">保利地产</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2015-2023 深圳市建装冠美软装艺术有限公司. 版权所有.</p>
-                    <p class="record-info">粤ICP备11045388号</p>
-                </div>
+<!-- footer.html -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>建装冠美软装</h3>
+                <p>专业软装设计艺术公司，致力于为客户打造理想的生活与工作空间。</p>
             </div>
-        </footer>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p>电话: 13924676068</p>
+                <p>邮箱: 879821991@qq.com</p>
+                <p>地址: 深圳市罗湖区广田集团9楼</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我们</a>
+                <a href="services.html">服务项目</a>
+                <a href="cases.html">案例展示</a>
+                <a href="contact.html">联系我们</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2015 深圳市建装冠美软装艺术有限公司. 版权所有.</p>
+        </div>
     </div>
-</body>
-</html>
+</footer>
