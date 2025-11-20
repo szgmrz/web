@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳湾一号豪华公寓 - 深圳市建装冠美软装艺术有限公司</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* 项目详情页特定样式 */
+        .project-detail {
+            margin-top: 70px;
+        }
+        
+        .project-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .project-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .project-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-overview {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .project-description h2,
+        .project-specs h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        .project-description h2::after,
+        .project-specs h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #c8a97e;
+            margin-top: 15px;
+        }
+        
+        .project-description p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .specs-list {
+            list-style: none;
+        }
+        
+        .specs-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #2a2a2a;
+            color: #b0b0b0;
+        }
+        
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+        
+        .spec-value {
+            color: #c8a97e;
+        }
+        
+        .project-gallery {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        .gallery-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #c8a97e;
+            margin: 15px auto 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #2a2a2a;
+            background: #1e1e1e;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gallery-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .gallery-caption {
+            padding: 20px;
+            color: #b0b0b0;
+            text-align: center;
+        }
+        
+        .project-features {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .features-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        .features-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #c8a97e;
+            margin: 15px auto 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background: #1e1e1e;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c8a97e, #b8945f);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 5px rgba(200, 169, 126, 0.3));
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .feature-item p {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+        
+        .back-to-cases {
+            padding: 40px 0;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #c8a97e, #b8945f);
+            color: #121212;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(200, 169, 126, 0.5);
+            background: linear-gradient(135deg, #b8945f, #c8a97e);
+        }
+        
+        @media (max-width: 768px) {
+            .project-info-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .project-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .project-hero-content p {
+                font-size: 1rem;
+            }
+            
+            .project-overview,
+            .project-gallery,
+            .project-features {
+                padding: 60px 0;
+            }
+            
+            .gallery-title,
+            .features-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+            
+            .gallery-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .gallery-image {
+                height: 200px;
+            }
+            
+            .feature-item {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main class="project-detail">
+        <!-- 项目横幅 -->
+        <section class="project-hero" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <div class="project-hero-content">
+                <h1>深圳湾一号豪华公寓</h1>
+                <p>高端公寓软装设计，融合现代美学与实用功能</p>
+            </div>
+        </section>
+
+        <!-- 项目概述 -->
+        <section class="project-overview">
+            <div class="container">
+                <div class="project-info-grid">
+                    <div class="project-description">
+                        <h2>项目概述</h2>
+                        <p>深圳湾一号作为深圳地标性高端住宅项目，本项目位于其核心区域，总面积180平方米。我们以现代简约风格为基调，融合艺术元素与实用功能，打造出既符合现代审美又满足高品质生活需求的居住空间。</p>
+                        <p>设计理念源自"少即是多"的现代主义原则，通过简洁的线条、高品质的材料和精心挑选的软装配饰，创造出一种宁静、优雅且功能完善的居住环境。</p>
+                        <p>我们在设计中特别注重空间流动性，通过开放式布局和巧妙的隔断设计，既保持了空间的通透感，又确保了各功能区域的私密性和独立性。</p>
+                    </div>
+                    <div class="project-specs">
+                        <h2>项目信息</h2>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-label">项目类型</span>
+                                <span class="spec-value">住宅设计</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">设计风格</span>
+                                <span class="spec-value">现代简约</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">项目面积</span>
+                                <span class="spec-value">180㎡</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">项目地址</span>
+                                <span class="spec-value">深圳湾一号</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">完工时间</span>
+                                <span class="spec-value">2023年8月</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">设计周期</span>
+                                <span class="spec-value">3个月</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">主设计师</span>
+                                <span class="spec-value">张明轩</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">主要材料</span>
+                                <span class="spec-value">天然大理石、实木、金属、皮革</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目图库 -->
+        <section class="project-gallery">
+            <div class="container">
+                <h2 class="gallery-title">项目实景</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="gallery-caption">客厅全景 - 现代简约风格</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="gallery-caption">餐厅区域 - 开放式设计</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="gallery-caption">主卧室 - 温馨舒适</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="gallery-caption">书房 - 工作与休闲结合</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="gallery-caption">厨房 - 功能与美观并重</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="gallery-caption">卫生间 - 精致细节</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计特点 -->
+        <section class="project-features">
+            <div class="container">
+                <h2 class="features-title">设计特点</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>现代简约美学</h3>
+                        <p>采用简洁线条和中性色调，营造出宁静、优雅的居住氛围，减少视觉杂乱，强调空间本质。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💡</div>
+                        <h3>智能照明系统</h3>
+                        <p>全屋采用智能调光系统，可根据不同场景和需求调节光线强度和色温，创造舒适的光环境。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌿</div>
+                        <h3>环保材料应用</h3>
+                        <p>选用环保认证的建材和家具，注重室内空气质量，创造健康宜居的居住环境。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📐</div>
+                        <h3>空间优化设计</h3>
+                        <p>巧妙利用每一寸空间，通过定制家具和智能收纳系统，实现功能性与美观性的完美结合。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛋️</div>
+                        <h3>定制家具设计</h3>
+                        <p>根据空间尺寸和客户需求，量身定制每一件家具，确保风格统一且功能完善。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎭</div>
+                        <h3>艺术元素融入</h3>
+                        <p>精选艺术品和装饰品，为空间注入文化内涵和个性表达，提升整体品味。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 返回案例页面 -->
+        <section class="back-to-cases">
+            <div class="container">
+                <a href="cases.html" class="back-btn">返回案例展示</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚引用 -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        // 加载导航栏
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // 设置当前页面导航激活状态
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (currentPage === linkHref) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // 移动端菜单切换
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            });
+
+        // 加载页脚
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
