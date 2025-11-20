@@ -458,11 +458,11 @@
     <!-- 页脚引用 -->
     <div id="footer-container"></div>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 
     <script>
         // 加载导航栏
-        fetch('header.html')
+        fetch('../header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
@@ -488,7 +488,7 @@
             });
 
         // 加载页脚
-        fetch('footer.html')
+        fetch('../footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
