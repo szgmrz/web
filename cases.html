@@ -8,7 +8,6 @@
 </head>
 <body>
     <div id="header-container"></div>
-
     <main class="page-main">
         <section class="page-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('./images/cases-hero.jpg')">
@@ -34,16 +33,17 @@
             <div class="container">
                 <div class="cases-grid">
                     <!-- 住宅设计案例 -->
-                    <div class="case-item residential" data-category="residential">
-                        <div class="case-image"></div>
-                        <div class="case-info">
-                            <h3>深圳湾一号豪华公寓</h3>
-                            <p class="case-type">住宅设计 · 现代简约</p>
-                            <p class="case-area">面积: 180㎡</p>
-                            <p class="case-desc">高端公寓软装设计，融合现代美学与实用功能</p>
+                     <a href="Project/shenzhenwan-bay-one.html" class="case-item residential" data-category="residential">
+                        <div class="case-item residential" data-category="residential">
+                            <div class="case-image"></div>
+                            <div class="case-info">
+                                <h3>深圳湾一号豪华公寓</h3>
+                                <p class="case-type">住宅设计 · 现代简约</p>
+                                <p class="case-area">面积: 180㎡</p>
+                                <p class="case-desc">高端公寓软装设计，融合现代美学与实用功能</p>
+                            </div>
                         </div>
-                    </div>
-                    
+                    </a>
                     <div class="case-item residential" data-category="residential">
                         <div class="case-image"></div>
                         <div class="case-info">
@@ -151,7 +151,6 @@
     <script src="js/main.js"></script>
 
     <script>
-
         // 加载导航栏
         fetch('header.html')
             .then(response => response.text())
