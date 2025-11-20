@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>案例展示 - 深圳市建装冠美软装艺术有限公司</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 修复案例项链接样式 */
+        .cases-gallery a.case-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .cases-gallery a.case-item:hover {
+            text-decoration: none;
+        }
+
+        /* 确保案例项内的文字颜色正确 */
+        .cases-gallery a.case-item .case-info h3,
+        .cases-gallery a.case-item .case-info p {
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
     <div id="header-container"></div>
@@ -32,16 +50,14 @@
         <section class="cases-gallery">
             <div class="container">
                 <div class="cases-grid">
-                    <!-- 住宅设计案例 -->
-                     <a href="Project/shenzhenwan-bay-one.html" class="case-item residential" data-category="residential">
-                        <div class="case-item residential" data-category="residential">
-                            <div class="case-image"></div>
-                            <div class="case-info">
-                                <h3>深圳湾一号豪华公寓</h3>
-                                <p class="case-type">住宅设计 · 现代简约</p>
-                                <p class="case-area">面积: 180㎡</p>
-                                <p class="case-desc">高端公寓软装设计，融合现代美学与实用功能</p>
-                            </div>
+                    <!-- 住宅设计案例 - 修正后的链接结构 -->
+                    <a href="Project/shenzhenwan-bay-one.html" class="case-item residential" data-category="residential">
+                        <div class="case-image"></div>
+                        <div class="case-info">
+                            <h3>深圳湾一号豪华公寓</h3>
+                            <p class="case-type">住宅设计 · 现代简约</p>
+                            <p class="case-area">面积: 180㎡</p>
+                            <p class="case-desc">高端公寓软装设计，融合现代美学与实用功能</p>
                         </div>
                     </a>
                     <div class="case-item residential" data-category="residential">
