@@ -54,6 +54,48 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
+        /* 面包屑导航样式 */
+        .breadcrumb-nav {
+            background: #1a1a1a;
+            padding: 20px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+        
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-item:not(:last-child)::after {
+            content: '>';
+            margin: 0 10px;
+            color: #b0b0b0;
+        }
+        
+        .breadcrumb-link {
+            color: #c8a97e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-link:hover {
+            color: #b8945f;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-current {
+            color: #b0b0b0;
+        }
+        
         .project-overview {
             padding: 80px 0;
             background: #121212;
@@ -286,6 +328,10 @@
                 font-size: 1rem;
             }
             
+            .breadcrumb {
+                font-size: 0.9rem;
+            }
+            
             .project-overview,
             .project-gallery,
             .project-features {
@@ -323,6 +369,22 @@
             <div class="project-hero-content">
                 <h1>深圳湾一号豪华公寓</h1>
                 <p>高端公寓软装设计，融合现代美学与实用功能</p>
+            </div>
+        </section>
+
+        <!-- 面包屑导航 -->
+        <section class="breadcrumb-nav">
+            <div class="container">
+                <nav aria-label="面包屑导航">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="../cases.html" class="breadcrumb-link">案例展示</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <span class="breadcrumb-current">深圳湾一号豪华公寓</span>
+                        </li>
+                    </ol>
+                </nav>
             </div>
         </section>
 
