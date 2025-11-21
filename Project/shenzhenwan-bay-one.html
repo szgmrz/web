@@ -57,7 +57,7 @@
         /* 面包屑导航样式 */
         .breadcrumb-nav {
             background: #1a1a1a;
-            padding: 20px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #2a2a2a;
         }
         
@@ -66,8 +66,23 @@
             align-items: center;
             list-style: none;
             margin: 0;
-            padding: 0;
+            padding: 0 0px;
             font-size: 0.95rem;
+            line-height: 0.0001;
+        }
+
+        .breadcrumb-link,
+        .breadcrumb-current {
+            font-weight: bold; /* 直接应用加粗 */
+            /* 或使用数值控制粗细：font-weight: 700; */
+        }
+
+        .breadcrumb-item:first-child .breadcrumb-link {
+            margin-left: -100px;
+        }
+
+        .breadcrumb-nav .container {
+            padding: 0; /* 彻底取消左右内边距 */
         }
         
         .breadcrumb-item {
@@ -365,7 +380,7 @@
     
     <main class="project-detail">
         <!-- 项目横幅 -->
-        <section class="project-hero" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+        <section class="project-hero" style="background-image: url('../images/contact-hero.jpg')">
             <div class="project-hero-content">
                 <h1>深圳湾一号豪华公寓</h1>
                 <p>高端公寓软装设计，融合现代美学与实用功能</p>
