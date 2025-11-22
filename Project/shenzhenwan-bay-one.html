@@ -27,6 +27,7 @@
             padding: 0 0px;
             font-size: 0.95rem;
             line-height: 0.0001;
+            margin-left: -90px; /* 调整这个值来控制左移距离 */
         }
 
         .breadcrumb-link,
@@ -72,24 +73,6 @@
         .project-gallery {
             padding: 0;
             background: #1a1a1a;
-        }
-        
-        .gallery-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            color: #ffffff;
-            position: relative;
-            padding-top: 80px;
-        }
-        
-        .gallery-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: #c8a97e;
-            margin: 15px auto 0;
         }
         
         /* 全屏大图 - 铺满全屏 */
@@ -340,7 +323,7 @@
             background: linear-gradient(135deg, #b8945f, #c8a97e);
         }
         
-        /* 轮播弹窗样式 */
+        /* 轮播弹窗样式 - 修改后 */
         .lightbox-overlay {
             position: fixed;
             top: 0;
@@ -391,13 +374,17 @@
             font-size: 1.1rem;
         }
         
+        /* 修改后的导航按钮 - 固定在视口两侧 */
         .lightbox-nav {
-            position: absolute;
+            position: fixed;
             top: 50%;
-            width: 100%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
             display: flex;
             justify-content: space-between;
-            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 10000;
         }
         
         .lightbox-btn {
@@ -414,6 +401,7 @@
             justify-content: center;
             align-items: center;
             margin: 0 20px;
+            pointer-events: auto;
         }
         
         .lightbox-btn:hover {
@@ -422,7 +410,7 @@
         }
         
         .lightbox-close {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             background: rgba(200, 169, 126, 0.7);
@@ -437,6 +425,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 10000;
         }
         
         .lightbox-close:hover {
@@ -467,7 +456,6 @@
                 padding: 60px 0;
             }
             
-            .gallery-title,
             .features-title {
                 font-size: 1.8rem;
                 margin-bottom: 40px;
@@ -531,14 +519,10 @@
 
         <!-- 项目实景 - 新布局 -->
         <section class="project-gallery">
-            <div class="container">
-                <h2 class="gallery-title">项目实景</h2>
-            </div>
-            
-            <!-- 全屏大图 -->
-            <div class="featured-image-container" data-index="0">
-                <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-                    <div class="featured-caption">客厅全景 - 现代简约风格</div>
+            <!-- 全屏大图 - 已替换为主卧室 -->
+            <div class="featured-image-container" data-index="2">
+                <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                    <div class="featured-caption">主卧室 - 温馨舒适</div>
                 </div>
             </div>
             
@@ -548,12 +532,12 @@
                     <img class="gallery-image" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="餐厅区域">
                     <div class="gallery-caption">餐厅区域 - 开放式设计</div>
                 </div>
-                <div class="gallery-item" data-index="2">
-                    <img class="gallery-image" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="主卧室">
-                    <div class="gallery-caption">主卧室 - 温馨舒适</div>
+                <div class="gallery-item" data-index="0">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="客厅全景">
+                    <div class="gallery-caption">客厅全景 - 现代简约风格</div>
                 </div>
                 <div class="gallery-item" data-index="3">
-                    <img class="gallery-image" src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="书房">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="书房">
                     <div class="gallery-caption">书房 - 工作与休闲结合</div>
                 </div>
                 <div class="gallery-item" data-index="4">
@@ -573,7 +557,7 @@
                     <div class="gallery-caption">衣帽间 - 精致收纳</div>
                 </div>
                 <div class="gallery-item" data-index="8">
-                    <img class="gallery-image" src="https://images.unsplash.com/photo-1600566752734-45b8f0b6b6c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="走廊">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="走廊">
                     <div class="gallery-caption">走廊 - 艺术氛围</div>
                 </div>
             </div>
@@ -700,7 +684,7 @@
             </div>
             
             <div class="lightbox-slide" data-index="3">
-                <img class="lightbox-image" src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="书房">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="书房">
                 <div class="lightbox-caption">书房 - 工作与休闲结合</div>
             </div>
             
@@ -725,10 +709,11 @@
             </div>
             
             <div class="lightbox-slide" data-index="8">
-                <img class="lightbox-image" src="https://images.unsplash.com/photo-1600566752734-45b8f0b6b6c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="走廊">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="走廊">
                 <div class="lightbox-caption">走廊 - 艺术氛围</div>
             </div>
             
+            <!-- 导航按钮现在在overlay级别，而不是容器内 -->
             <div class="lightbox-nav">
                 <button class="lightbox-btn" id="prevBtn">
                     <i class="fas fa-chevron-left"></i>
