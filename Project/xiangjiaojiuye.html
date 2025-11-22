@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湘窖酒业餐厅（包间） - 深圳市建装冠美软装艺术有限公司</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 项目详情页特定样式 */
+        .project-detail {
+            margin-top: 70px;
+        }
+        
+        /* 面包屑导航样式 */
+        .breadcrumb-nav {
+            background: #1a1a1a;
+            padding: 10px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0 0px;
+            font-size: 0.95rem;
+            line-height: 0.0001;
+            margin-left: -90px; /* 调整这个值来控制左移距离 */
+        }
+
+        .breadcrumb-link,
+        .breadcrumb-current {
+            font-weight: bold;
+        }
+
+        .breadcrumb-item:first-child .breadcrumb-link {
+            margin-left: -100px;
+        }
+
+        .breadcrumb-nav .container {
+            padding: 0;
+        }
+        
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-item:not(:last-child)::after {
+            content: '>';
+            margin: 0 10px;
+            color: #b0b0b0;
+        }
+        
+        .breadcrumb-link {
+            color: #c8a97e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-link:hover {
+            color: #b8945f;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-current {
+            color: #b0b0b0;
+        }
+        
+        /* 项目实景 - 新布局 */
+        .project-gallery {
+            padding: 0;
+            background: #1a1a1a;
+        }
+        
+        /* 全屏大图 - 铺满全屏 */
+        .featured-image-container {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .featured-image:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            padding: 0 20px;
+        }
+        
+        /* 小图网格 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #2a2a2a;
+            background: #1e1e1e;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gallery-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            color: #b0b0b0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* 项目概述 */
+        .project-overview {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .project-description h2,
+        .project-specs h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        .project-description h2::after,
+        .project-specs h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #c8a97e;
+            margin-top: 15px;
+        }
+        
+        .project-description p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .specs-list {
+            list-style: none;
+        }
+        
+        .specs-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #2a2a2a;
+            color: #b0b0b0;
+        }
+        
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+        
+        .spec-value {
+            color: #c8a97e;
+        }
+        
+        /* 设计特点 */
+        .project-features {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .features-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        .features-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #c8a97e;
+            margin: 15px auto 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background: #1e1e1e;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c8a97e, #b8945f);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 5px rgba(200, 169, 126, 0.3));
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .feature-item p {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+        
+        .back-to-cases {
+            padding: 40px 0;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #c8a97e, #b8945f);
+            color: #121212;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(200, 169, 126, 0.5);
+            background: linear-gradient(135deg, #b8945f, #c8a97e);
+        }
+        
+        /* 轮播弹窗样式 - 修改后 */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-container {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+        }
+        
+        .lightbox-slide {
+            display: none;
+            text-align: center;
+        }
+        
+        .lightbox-slide.active {
+            display: block;
+        }
+        
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .lightbox-caption {
+            color: #fff;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* 修改后的导航按钮 - 固定在视口两侧 */
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 10000;
+        }
+        
+        .lightbox-btn {
+            background: rgba(200, 169, 126, 0.7);
+            color: #121212;
+            border: none;
+            width: 50px;
+            height: 50px;
+            borderRadius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px;
+            pointer-events: auto;
+        }
+        
+        .lightbox-btn:hover {
+            background: rgba(200, 169, 126, 0.9);
+            transform: scale(1.1);
+        }
+        
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(200, 169, 126, 0.7);
+            color: #121212;
+            border: none;
+            width: 40px;
+            height: 40px;
+            borderRadius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(200, 169, 126, 0.9);
+            transform: scale(1.1);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 992px) {
+            .project-info-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.9rem;
+            }
+            
+            .project-overview,
+            .project-gallery,
+            .project-features {
+                padding: 60px 0;
+            }
+            
+            .features-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+            
+            .featured-image {
+                height: 50vh;
+            }
+            
+            .gallery-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .gallery-image {
+                height: 200px;
+            }
+            
+            .feature-item {
+                padding: 30px 20px;
+            }
+            
+            .lightbox-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .featured-image {
+                height: 40vh;
+            }
+            
+            .gallery-image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main class="project-detail">
+        <!-- 面包屑导航 -->
+        <section class="breadcrumb-nav">
+            <div class="container">
+                <nav aria-label="面包屑导航">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="../cases.html" class="breadcrumb-link">案例展示</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <span class="breadcrumb-current">湘窖酒业餐厅（包间）</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 项目实景 - 新布局 -->
+        <section class="project-gallery">
+            <!-- 全屏大图 - 主包间全景 -->
+            <div class="featured-image-container" data-index="2">
+                <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                    <div class="featured-caption">主包间全景 - 中式典雅风格</div>
+                </div>
+            </div>
+            
+            <!-- 小图网格 -->
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="1">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="包间入口">
+                    <div class="gallery-caption">包间入口 - 传统中式门廊</div>
+                </div>
+                <div class="gallery-item" data-index="0">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1578474846611-2f8f26d78d51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="包间全景">
+                    <div class="gallery-caption">包间全景 - 中式雅致氛围</div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="酒柜展示区">
+                    <div class="gallery-caption">酒柜展示区 - 湘窖酒品展示</div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1565772838491-cbeb32fac78a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="茶艺区">
+                    <div class="gallery-caption">茶艺区 - 中式茶道文化</div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="餐桌细节">
+                    <div class="gallery-caption">餐桌细节 - 精致餐具摆设</div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="墙面装饰">
+                    <div class="gallery-caption">墙面装饰 - 中式艺术挂画</div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="灯光设计">
+                    <div class="gallery-caption">灯光设计 - 温馨柔和氛围</div>
+                </div>
+                <div class="gallery-item" data-index="8">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1578474846611-2f8f26d78d51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="休息区">
+                    <div class="gallery-caption">休息区 - 中式沙发与茶几</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目概述 -->
+        <section class="project-overview">
+            <div class="container">
+                <div class="project-info-grid">
+                    <div class="project-description">
+                        <h2>项目概述</h2>
+                        <p>湘窖酒业餐厅包间项目位于深圳市中心商务区，总面积150平方米，旨在为高端商务宴请提供私密、典雅的用餐环境。设计以中式传统元素为基调，融合现代简约理念，打造出既体现湘窖酒业文化底蕴，又符合现代商务需求的餐饮空间。</p>
+                        <p>设计理念源自"酒文化与中式美学"的融合，通过传统中式元素与现代工艺的结合，营造出既有文化底蕴又不失现代舒适感的用餐环境。空间布局注重功能分区，设有主用餐区、茶艺区、酒品展示区和休息区，满足不同场合的商务宴请需求。</p>
+                        <p>我们在设计中特别注重材质的质感和细节的处理，选用天然木材、手工刺绣、定制铜艺等高品质材料，通过精湛的工艺展现中式美学的精髓，同时确保空间的实用性和舒适度。</p>
+                    </div>
+                    <div class="project-specs">
+                        <h2>项目信息</h2>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-label">项目类型</span>
+                                <span class="spec-value">商业餐饮空间</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">设计风格</span>
+                                <span class="spec-value">新中式风格</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">项目面积</span>
+                                <span class="spec-value">150㎡</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">项目地址</span>
+                                <span class="spec-value">深圳市福田区</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">完工时间</span>
+                                <span class="spec-value">2023年10月</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">设计周期</span>
+                                <span class="spec-value">2个月</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">主设计师</span>
+                                <span class="spec-value">李雅文</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">主要材料</span>
+                                <span class="spec-value">实木、铜艺、大理石、手工刺绣、定制壁纸</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计特点 -->
+        <section class="project-features">
+            <div class="container">
+                <h2 class="features-title">设计特点</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🏮</div>
+                        <h3>新中式美学</h3>
+                        <p>融合传统中式元素与现代设计语言，打造既有文化底蕴又符合现代审美的餐饮空间，营造高雅、典雅的用餐氛围。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🍶</div>
+                        <h3>酒文化展示</h3>
+                        <p>精心设计的酒柜展示区，突出湘窖酒业品牌文化，同时兼具实用功能，为品酒、储酒提供专业空间。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🍵</div>
+                        <h3>茶艺空间</h3>
+                        <p>独立设置的茶艺区，融合中式茶道文化，为商务宴请提供多元化的交流空间，提升整体用餐体验。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎋</div>
+                        <h3>自然材质应用</h3>
+                        <p>大量使用天然木材、石材等环保材料，结合传统工艺，营造温馨、自然的空间氛围。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💡</div>
+                        <h3>层次化照明</h3>
+                        <p>采用多层次照明设计，结合重点照明、氛围照明和功能照明，营造温馨舒适的用餐环境。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>定制艺术品</h3>
+                        <p>精选和定制具有中式韵味艺术品，包括水墨画、书法作品和传统工艺品，提升空间文化品位。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 返回案例页面 -->
+        <section class="back-to-cases">
+            <div class="container">
+                <a href="../cases.html" class="back-btn">返回案例展示</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 轮播弹窗 -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="closeLightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="lightbox-slide active" data-index="0">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1578474846611-2f8f26d78d51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="包间全景">
+                <div class="lightbox-caption">包间全景 - 中式雅致氛围</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="1">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="包间入口">
+                <div class="lightbox-caption">包间入口 - 传统中式门廊</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="2">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="主包间全景">
+                <div class="lightbox-caption">主包间全景 - 中式典雅风格</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="3">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="酒柜展示区">
+                <div class="lightbox-caption">酒柜展示区 - 湘窖酒品展示</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="4">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1565772838491-cbeb32fac78a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="茶艺区">
+                <div class="lightbox-caption">茶艺区 - 中式茶道文化</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="5">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="餐桌细节">
+                <div class="lightbox-caption">餐桌细节 - 精致餐具摆设</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="6">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="墙面装饰">
+                <div class="lightbox-caption">墙面装饰 - 中式艺术挂画</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="7">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="灯光设计">
+                <div class="lightbox-caption">灯光设计 - 温馨柔和氛围</div>
+            </div>
+            
+            <div class="lightbox-slide" data-index="8">
+                <img class="lightbox-image" src="https://images.unsplash.com/photo-1578474846611-2f8f26d78d51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="休息区">
+                <div class="lightbox-caption">休息区 - 中式沙发与茶几</div>
+            </div>
+            
+            <!-- 导航按钮现在在overlay级别，而不是容器内 -->
+            <div class="lightbox-nav">
+                <button class="lightbox-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚引用 -->
+    <div id="footer-container"></div>
+
+    <script src="../js/main.js"></script>
+
+    <script>
+        // 轮播弹窗功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const closeBtn = document.getElementById('closeLightbox');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.lightbox-slide');
+            const galleryItems = document.querySelectorAll('.gallery-item, .featured-image-container');
+            
+            let currentSlide = 0;
+            
+            // 打开弹窗
+            function openLightbox(index) {
+                currentSlide = index;
+                updateSlide();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // 防止背景滚动
+            }
+            
+            // 关闭弹窗
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto'; // 恢复背景滚动
+            }
+            
+            // 更新当前显示的幻灯片
+            function updateSlide() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // 上一张
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlide();
+            }
+            
+            // 下一张
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide();
+            }
+            
+            // 绑定事件
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    openLightbox(index);
+                });
+            });
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // 键盘导航
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+                
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        prevSlide();
+                        break;
+                    case 'ArrowRight':
+                        nextSlide();
+                        break;
+                }
+            });
+            
+            // 点击背景关闭弹窗
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+
+        // 加载导航栏
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // 设置当前页面导航激活状态
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (currentPage === linkHref) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // 移动端菜单切换
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            });
+
+        // 加载页脚
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
