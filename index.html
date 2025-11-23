@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>深圳市建装冠美软装艺术有限公司 - 专业软装设计</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 修复案例卡片链接样式 */
+        .case-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .case-card-link:hover {
+            text-decoration: none;
+        }
+
+        /* 确保案例卡片内的文字颜色正确 */
+        .case-card-link .case-info h3,
+        .case-card-link .case-info p {
+            color: inherit;
+        }
+
+        /* 调整首页精选案例布局，减少空白 */
+        .featured-cases .container {
+            max-width: 1600px;
+            padding: 0 10px;
+        }
+
+        .featured-cases .cases-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .featured-cases .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-cases .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏容器 -->
@@ -86,27 +127,49 @@
         <div class="container">
             <h2 class="section-title">精选案例</h2>
             <div class="cases-grid">
-                <div class="case-card">
-                    <div class="case-image"></div>
-                    <div class="case-info">
-                        <h3>深圳湾豪华公寓</h3>
-                        <p>现代简约风格 · 180㎡</p>
+                <!-- 成都鹤山溪谷项目 -->
+                <a href="Project/heshanxigu.html" class="case-card-link">
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('Project/images/chengdu_heshanxigu/1.jpg')"></div>
+                        <div class="case-info">
+                            <h3>成都-鹤山溪谷项目</h3>
+                            <p>现代简约风格 · 180㎡</p>
+                        </div>
                     </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-image"></div>
-                    <div class="case-info">
-                        <h3>科技公司办公空间</h3>
-                        <p>工业风设计 · 500㎡</p>
+                </a>
+                
+                <!-- 湘窖酒业品鉴餐厅 -->
+                <a href="Project/xiangjiaojiuye.html" class="case-card-link">
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('Project/images/xiangjiaojiuye/1.jpg')"></div>
+                        <div class="case-info">
+                            <h3>湘窖酒业品鉴餐厅</h3>
+                            <p>工业风与自然生态融合 · 350㎡</p>
+                        </div>
                     </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-image"></div>
-                    <div class="case-info">
-                        <h3>精品酒店套房</h3>
-                        <p>新中式风格 · 45㎡</p>
+                </a>
+                
+                <!-- 科技公司办公空间 -->
+                <a href="cases.html" class="case-card-link">
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="case-info">
+                            <h3>科技公司总部</h3>
+                            <p>工业风设计 · 800㎡</p>
+                        </div>
                     </div>
-                </div>
+                </a>
+                
+                <!-- 精品设计酒店 -->
+                <a href="cases.html" class="case-card-link">
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="case-info">
+                            <h3>精品设计酒店</h3>
+                            <p>艺术风格设计 · 1200㎡</p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="text-center">
                 <a href="cases.html" class="view-more-btn">查看更多案例</a>
