@@ -39,7 +39,7 @@
             </div>
             
             <!-- 小图网格 -->
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="galleryGrid">
                 <!-- 1-8号图片 -->
                 <div class="gallery-item" data-index="0">
                     <img class="gallery-image" src="images/chengdu_heshanxigu/1.jpg" alt="客厅全景">
@@ -137,6 +137,13 @@
                     <img class="gallery-image" src="images/chengdu_heshanxigu/23.jpg" alt="整体空间">
                     <!-- <div class="gallery-caption">整体空间 - 和谐统一</div> -->
                 </div>
+            </div>
+            
+            <!-- 更多图片按钮 -->
+            <div class="gallery-expand">
+                <button class="expand-btn" id="expandBtn">
+                    更多图片 <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </section>
 
@@ -417,6 +424,22 @@
             lightbox.addEventListener('click', function(e) {
                 if (e.target === lightbox) {
                     closeLightbox();
+                }
+            });
+            
+            // 图片折叠/展开功能
+            const galleryGrid = document.getElementById('galleryGrid');
+            const expandBtn = document.getElementById('expandBtn');
+            
+            // 图片展开/折叠功能
+            expandBtn.addEventListener('click', function() {
+                galleryGrid.classList.toggle('expanded');
+                this.classList.toggle('expanded');
+                
+                if (galleryGrid.classList.contains('expanded')) {
+                    this.innerHTML = '收起图片 <i class="fas fa-chevron-up"></i>';
+                } else {
+                    this.innerHTML = '更多图片 <i class="fas fa-chevron-down"></i>';
                 }
             });
         });

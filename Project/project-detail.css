@@ -110,14 +110,22 @@
     padding: 0 20px;
 }
 
-/* 小图网格 */
+/* 小图网格 - 添加折叠功能 */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 0 20px 80px;
+    padding: 0 20px 40px;
     max-width: 1200px;
     margin: 0 auto;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    max-height: 750px; /* 默认显示3行的高度 */
+}
+
+.gallery-grid.expanded {
+    max-height: none; /* 展开时取消高度限制 */
+    padding-bottom: 80px;
 }
 
 .gallery-item {
@@ -147,6 +155,39 @@
     color: #b0b0b0;
     text-align: center;
     font-size: 0.9rem;
+}
+
+/* 更多图片按钮 */
+.gallery-expand {
+    text-align: center;
+    margin: 20px 0 40px;
+}
+
+.expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(200, 169, 126, 0.1);
+    color: #c8a97e;
+    border: 1px solid #c8a97e;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.expand-btn:hover {
+    background: rgba(200, 169, 126, 0.2);
+    transform: translateY(-2px);
+}
+
+.expand-btn i {
+    transition: transform 0.3s;
+}
+
+.expand-btn.expanded i {
+    transform: rotate(180deg);
 }
 
 /* 项目概述 */
@@ -434,6 +475,11 @@
     
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
+        max-height: 1200px; /* 移动端默认显示更多行 */
+    }
+    
+    .gallery-grid.expanded {
+        max-height: none;
     }
 }
 
@@ -460,6 +506,7 @@
     .gallery-grid,
     .features-grid {
         grid-template-columns: 1fr;
+        max-height: 1800px; /* 移动端默认显示更多行 */
         gap: 25px;
     }
     
