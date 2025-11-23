@@ -1206,6 +1206,35 @@ nav {
     background: #121212;
 }
 
+/* 减少案例展示容器的内边距 */
+.cases-gallery .container {
+    max-width: 1400px; /* 增加最大宽度 */
+    padding: 0 10px; /* 减少左右内边距 */
+}
+
+/* 案例展示网格布局 - 修改为更多列 */
+.cases-gallery .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* 在大屏幕上显示更多列 */
+@media (min-width: 1200px) {
+    .cases-gallery .cases-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .cases-gallery .cases-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+
 .case-item {
     background: #1e1e1e;
     border-radius: 8px;
@@ -1244,61 +1273,47 @@ nav {
     transform: scaleX(1);
 }
 
-.case-item:nth-child(1) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+.case-image {
+    height: 180px;
+    background-color: #2a2a2a;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-.case-item:nth-child(2) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
-}
-
-.case-item:nth-child(3) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
-}
-
-.case-item:nth-child(4) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
-}
-
-.case-item:nth-child(5) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
-}
-
-.case-item:nth-child(6) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
-}
-
-.case-item:nth-child(7) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
-}
-
-.case-item:nth-child(8) .case-image {
-    background-image: url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+.case-info {
+    padding: 15px;
+    background: #1e1e1e;
 }
 
 .case-info h3 {
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
+    line-height: 1.3;
 }
 
 .case-type {
     color: #c8a97e;
     font-weight: 500;
     margin-bottom: 8px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .case-area {
     color: #b0b0b0;
     margin-bottom: 12px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .case-desc {
     color: #b0b0b0;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .case-statistics {
@@ -1988,6 +2003,23 @@ footer {
         padding: 60px 0;
     }
     
+    .cases-gallery .cases-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .case-image {
+        height: 180px;
+    }
+    
+    .case-info {
+        padding: 15px;
+    }
+    
+    .case-info h3 {
+        font-size: 1.2rem;
+    }
+    
     .case-statistics {
         padding: 60px 0;
     }
@@ -2088,6 +2120,11 @@ footer {
     
     .team-tab {
         width: 200px;
+    }
+    
+    .cases-gallery .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     /* 专业服务流程响应式 - 改为1列 */
