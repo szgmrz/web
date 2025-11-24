@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳宏电大厦 - 深圳市建装冠美软装艺术有限公司</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入项目详情页特定样式 -->
+    <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main class="project-detail">
+        <!-- 面包屑导航 -->
+        <section class="breadcrumb-nav">
+            <div class="container">
+                <nav aria-label="面包屑导航">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="../cases.html" class="breadcrumb-link">案例展示</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <span class="breadcrumb-current">深圳-宏电大厦</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 项目实景 - 新布局 -->
+        <section class="project-gallery">
+            <!-- 全屏大图 -->
+            <div class="featured-image-container" data-index="0">
+                <div class="featured-image" style="background-image: url('images/shenzhen_hongdian/1.jpg')">
+                    <!-- <div class="featured-caption">办公大堂 - 现代商务风格</div> -->
+                </div>
+            </div>
+            
+            <!-- 小图网格 -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- 1-6号图片 -->
+                <div class="gallery-item" data-index="0">
+                    <img class="gallery-image" src="images/shenzhen_hongdian/1.jpg" alt="办公大堂">
+                    <!-- <div class="gallery-caption">办公大堂 - 现代商务风格</div> -->
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img class="gallery-image" src="images/shenzhen_hongdian/2.jpg" alt="开放式办公区">
+                    <!-- <div class="gallery-caption">开放式办公区 - 高效协作空间</div> -->
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img class="gallery-image" src="images/shenzhen_hongdian/3.jpg" alt="独立办公室">
+                    <!-- <div class="gallery-caption">独立办公室 - 私密工作空间</div> -->
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img class="gallery-image" src="images/shenzhen_hongdian/4.jpg" alt="会议室">
+                    <!-- <div class="gallery-caption">会议室 - 专业会议环境</div> -->
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img class="gallery-image" src="images/shenzhen_hongdian/5.jpg" alt="休闲区">
+                    <!-- <div class="gallery-caption">休闲区 - 放松交流空间</div> -->
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img class="gallery-image" src="images/shenzhen_hongdian/6.jpg" alt="茶水间">
+                    <!-- <div class="gallery-caption">茶水间 - 员工休息区域</div> -->
+                </div>
+            </div>
+            
+            <!-- 更多图片按钮 - 由于只有6张图片，不需要展开/折叠功能，隐藏按钮 -->
+            <div class="gallery-expand" style="display: none;">
+                <button class="expand-btn" id="expandBtn">
+                    更多图片 <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 项目概述 -->
+        <section class="project-overview">
+            <div class="container">
+                <div class="project-info-grid">
+                    <div class="project-description">
+                        <h2>项目概述</h2>
+                        <p>深圳宏电大厦位于深圳市福田中心区，是一座集高端办公、商务接待与创新研发于一体的现代化甲级写字楼。本项目总面积3800平方米，我们以"高效协同"为设计理念，将现代商务风格与人性化办公空间完美结合，打造出兼具专业形象与舒适体验的现代化办公环境。</p>
+                        <p>设计灵感源自深圳作为国际化大都市的活力与创新精神，通过空间功能分区优化、智能化办公系统和绿色环保材料运用，创造出一种促进团队协作、激发创新思维的高品质工作空间。</p>
+                        <p>我们在设计中特别注重工作效率与员工福祉的平衡，从开放式协作区到独立专注空间，每一处都体现了对现代工作方式的深度理解和对办公体验的细致关怀。</p>
+                    </div>
+                    <div class="project-specs">
+                        <h2>项目信息</h2>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-label">项目类型</span>
+                                <span class="spec-value">办公空间设计</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">设计风格</span>
+                                <span class="spec-value">现代商务与人性化融合</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">项目面积</span>
+                                <span class="spec-value">3800㎡</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">项目地址</span>
+                                <span class="spec-value">深圳-福田中心区</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">完工时间</span>
+                                <span class="spec-value">2024年4月</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">设计周期</span>
+                                <span class="spec-value">5个月</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">主设计师</span>
+                                <span class="spec-value">文苡</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">主要材料</span>
+                                <span class="spec-value">环保板材、金属饰面、智能玻璃、高级地毯</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计特点 -->
+        <section class="project-features">
+            <div class="container">
+                <h2 class="features-title">设计特点</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <h3>高效协同</h3>
+                        <p>优化空间布局促进团队协作与沟通，打造高效工作环境</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌱</div>
+                        <h3>绿色环保</h3>
+                        <p>采用环保材料与节能技术，营造健康舒适的工作空间</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💼</div>
+                        <h3>专业形象</h3>
+                        <p>现代商务风格彰显企业专业形象，提升品牌价值</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🧠</div>
+                        <h3>人性关怀</h3>
+                        <p>细致考虑员工需求，创造促进创新与福祉的工作环境</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 返回案例页面 -->
+        <section class="back-to-cases">
+            <div class="container">
+                <a href="../cases.html" class="back-btn">返回案例展示</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 轮播弹窗 -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="closeLightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- 6张轮播幻灯片 -->
+            <div class="lightbox-slide active" data-index="0">
+                <img class="lightbox-image" src="images/shenzhen_hongdian/1.jpg" alt="办公大堂">
+                <!-- <div class="lightbox-caption">办公大堂 - 现代商务风格</div> -->
+            </div>
+            
+            <div class="lightbox-slide" data-index="1">
+                <img class="lightbox-image" src="images/shenzhen_hongdian/2.jpg" alt="开放式办公区">
+                <!-- <div class="lightbox-caption">开放式办公区 - 高效协作空间</div> -->
+            </div>
+            
+            <div class="lightbox-slide" data-index="2">
+                <img class="lightbox-image" src="images/shenzhen_hongdian/3.jpg" alt="独立办公室">
+                <!-- <div class="lightbox-caption">独立办公室 - 私密工作空间</div> -->
+            </div>
+            
+            <div class="lightbox-slide" data-index="3">
+                <img class="lightbox-image" src="images/shenzhen_hongdian/4.jpg" alt="会议室">
+                <!-- <div class="lightbox-caption">会议室 - 专业会议环境</div> -->
+            </div>
+            
+            <div class="lightbox-slide" data-index="4">
+                <img class="lightbox-image" src="images/shenzhen_hongdian/5.jpg" alt="休闲区">
+                <!-- <div class="lightbox-caption">休闲区 - 放松交流空间</div> -->
+            </div>
+            
+            <div class="lightbox-slide" data-index="5">
+                <img class="lightbox-image" src="images/shenzhen_hongdian/6.jpg" alt="茶水间">
+                <!-- <div class="lightbox-caption">茶水间 - 员工休息区域</div> -->
+            </div>
+            
+            <!-- 导航按钮现在在overlay级别，而不是容器内 -->
+            <div class="lightbox-nav">
+                <button class="lightbox-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚引用 -->
+    <div id="footer-container"></div>
+
+    <script src="../js/main.js"></script>
+
+    <script>
+        // 轮播弹窗功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const closeBtn = document.getElementById('closeLightbox');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.lightbox-slide');
+            const galleryItems = document.querySelectorAll('.gallery-item, .featured-image-container');
+            
+            let currentSlide = 0;
+            
+            // 打开弹窗
+            function openLightbox(index) {
+                currentSlide = index;
+                updateSlide();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // 防止背景滚动
+            }
+            
+            // 关闭弹窗
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto'; // 恢复背景滚动
+            }
+            
+            // 更新当前显示的幻灯片
+            function updateSlide() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // 上一张
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlide();
+            }
+            
+            // 下一张
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide();
+            }
+            
+            // 绑定事件
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    openLightbox(index);
+                });
+            });
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // 键盘导航
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+                
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        prevSlide();
+                        break;
+                    case 'ArrowRight':
+                        nextSlide();
+                        break;
+                }
+            });
+            
+            // 点击背景关闭弹窗
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+
+        // 加载导航栏
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // 设置当前页面导航激活状态
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (currentPage === linkHref) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // 移动端菜单切换
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            });
+
+        // 加载页脚
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
