@@ -4,82 +4,638 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服务项目 - 深圳市建装冠美软装艺术有限公司</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #121212;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: rgba(18, 18, 18, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo h1 {
+            color: #c8a97e;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(200, 169, 126, 0.3);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #c8a97e;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c8a97e;
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after, .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* 页面横幅 */
+        .page-main {
+            margin-top: 70px;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(200, 169, 126, 0.1), transparent);
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* 服务分类标题 */
+        .service-category {
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .service-category h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .service-category h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #c8a97e;
+            margin: 15px auto 0;
+        }
+
+        /* 紧凑网格布局 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .service-item {
+            background: #1a1a1a;
+            padding: 30px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c8a97e, #b8945f);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #c8a97e;
+            text-align: center;
+        }
+
+        .service-item h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .service-item p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-item ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .service-item li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: #b0b0b0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .service-item li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #c8a97e;
+            font-weight: bold;
+        }
+
+        /* 专业服务流程 - 紧凑横向布局 */
+        .process-horizontal {
+            display: flex;
+            justify-content: space-between;
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .process-horizontal::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #c8a97e, #b8945f);
+            z-index: 0;
+        }
+
+        .process-step-horizontal {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            max-width: 180px;
+        }
+
+        .step-number-horizontal {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c8a97e, #b8945f);
+            color: #121212;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+            box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step-horizontal h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .process-step-horizontal p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* CTA部分 */
+        .service-cta {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), 
+                        url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .service-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(200, 169, 126, 0.1), transparent);
+        }
+
+        .service-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .service-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #c8a97e, #b8945f);
+            color: #121212;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(200, 169, 126, 0.3);
+            position: relative;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(200, 169, 126, 0.5);
+            background: linear-gradient(135deg, #b8945f, #c8a97e);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #0a0a0a;
+            color: #b0b0b0;
+            padding: 60px 0 20px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #c8a97e;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #b0b0b0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #c8a97e;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2a2a2a;
+            color: #888;
+        }
+
+        /* 装饰元素 */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 169, 126, 0.1), transparent 70%);
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            right: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .process-horizontal {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+            
+            .process-horizontal::before {
+                display: none;
+            }
+            
+            .process-step-horizontal {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 60px 0;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .service-category h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .service-item {
+                padding: 25px 20px;
+            }
+            
+            .service-cta {
+                padding: 60px 0;
+            }
+            
+            .service-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .service-cta p {
+                font-size: 1.1rem;
+            }
+            
+            .circle-1, .circle-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .process-step-horizontal {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .process-horizontal {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="header-container"></div>
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>建装冠美</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="services.html" class="active">服务项目</a></li>
+                <li><a href="cases.html">案例展示</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="page-main">
-        <section class="page-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('./images/service-hero.jpg')">
-            <div class="container">
+        <!-- 页面横幅 -->
+        <section class="page-hero">
+            <div class="container hero-content">
                 <h1>服务项目</h1>
-                <p>专业软装设计解决方案</p>
+                <p>专业软装设计解决方案，打造独特空间体验</p>
             </div>
         </section>
 
+        <!-- 装饰元素 -->
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+
         <section class="services-detail">
             <div class="container">
+                <!-- 住宅软装设计 - 紧凑网格布局 -->
                 <div class="service-category">
                     <h2>住宅软装设计</h2>
-                    <div class="service-items">
-                        <div class="service-detail-item">
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
                             <h3>公寓设计</h3>
                             <p>为各类公寓提供个性化软装设计方案，优化空间利用，提升居住舒适度。</p>
                             <ul>
-                                <li>空间规划与布局</li>
-                                <li>色彩搭配方案</li>
-                                <li>家具选配与定制</li>
-                                <li>灯光设计</li>
-                                <li>软装饰品搭配</li>
+                                <li>空间规划与布局优化</li>
+                                <li>个性化色彩搭配方案</li>
+                                <li>定制家具选配与设计</li>
+                                <li>专业灯光氛围设计</li>
+                                <li>软装饰品艺术搭配</li>
                             </ul>
                         </div>
-                        <div class="service-detail-item">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
                             <h3>别墅设计</h3>
                             <p>高端别墅整体软装设计，打造奢华舒适的生活空间。</p>
                             <ul>
-                                <li>整体风格定位</li>
-                                <li>功能区域划分</li>
-                                <li>高端材质选配</li>
-                                <li>艺术品陈设</li>
-                                <li>庭院软装设计</li>
+                                <li>整体风格定位与设计</li>
+                                <li>功能区域科学划分</li>
+                                <li>高端材质精心选配</li>
+                                <li>艺术品陈设与展示</li>
+                                <li>庭院软装一体化设计</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- 商业空间设计 - 紧凑网格布局 -->
                 <div class="service-category">
                     <h2>商业空间设计</h2>
-                    <div class="service-items">
-                        <div class="service-detail-item">
-                            <h3>办公空间</h3>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>办公空间设计</h3>
                             <p>为企业办公空间提供专业软装设计，提升工作效率和企业形象。</p>
                             <ul>
                                 <li>前台接待区设计</li>
-                                <li>开放式办公区</li>
-                                <li>会议室设计</li>
-                                <li>休息区规划</li>
+                                <li>开放式办公区规划</li>
+                                <li>会议室专业设计</li>
+                                <li>休息区舒适布局</li>
                                 <li>企业文化展示</li>
                             </ul>
                         </div>
-                        <div class="service-detail-item">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
                             <h3>酒店设计</h3>
                             <p>星级酒店及精品酒店软装设计，营造独特入住体验。</p>
                             <ul>
                                 <li>大堂区域设计</li>
-                                <li>客房软装</li>
+                                <li>客房软装方案</li>
                                 <li>餐厅酒吧设计</li>
                                 <li>公共区域规划</li>
                                 <li>品牌形象融合</li>
                             </ul>
                         </div>
-                        <div class="service-detail-item">
-                            <h3>商业展示</h3>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h3>商业展示设计</h3>
                             <p>展厅、售楼处等商业展示空间软装设计。</p>
                             <ul>
                                 <li>展示空间规划</li>
                                 <li>产品陈列设计</li>
-                                <li>客户体验区</li>
+                                <li>客户体验区设计</li>
                                 <li>品牌故事传达</li>
                                 <li>灯光氛围营造</li>
                             </ul>
@@ -87,88 +643,110 @@
                     </div>
                 </div>
 
+                <!-- 专业服务流程 - 紧凑横向布局 -->
                 <div class="service-category">
                     <h2>专业服务流程</h2>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <h3>需求沟通</h3>
+                    <div class="process-horizontal">
+                        <div class="process-step-horizontal">
+                            <div class="step-number-horizontal">1</div>
+                            <h4>需求沟通</h4>
                             <p>深入了解客户需求，明确设计目标</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <h3>概念设计</h3>
+                        <div class="process-step-horizontal">
+                            <div class="step-number-horizontal">2</div>
+                            <h4>概念设计</h4>
                             <p>提供创意概念方案，确定设计方向</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <h3>深化设计</h3>
+                        <div class="process-step-horizontal">
+                            <div class="step-number-horizontal">3</div>
+                            <h4>深化设计</h4>
                             <p>完善设计方案，确定材质和色彩</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <h3>采购实施</h3>
+                        <div class="process-step-horizontal">
+                            <div class="step-number-horizontal">4</div>
+                            <h4>采购实施</h4>
                             <p>专业采购团队，确保材料品质</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <h3>现场布置</h3>
+                        <div class="process-step-horizontal">
+                            <div class="step-number-horizontal">5</div>
+                            <h4>现场布置</h4>
                             <p>专业施工团队，精准还原设计</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">6</div>
-                            <h3>售后维护</h3>
+                        <div class="process-step-horizontal">
+                            <div class="step-number-horizontal">6</div>
+                            <h4>售后维护</h4>
                             <p>提供售后支持，确保长期使用</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- CTA部分 -->
                 <div class="service-cta">
                     <h2>开始您的设计之旅</h2>
-                    <p>我们期待为您打造理想的空间环境</p>
+                    <p>我们期待为您打造理想的空间环境，让每一个细节都彰显品质与品味</p>
                     <a href="contact.html" class="cta-button">立即咨询</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 页脚引用 -->
-    <div id="footer-container"></div>
-
-    <script src="js/main.js"></script>
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>深圳市建装冠美软装艺术有限公司，专注于高端软装设计，为客户提供专业、个性化的空间解决方案。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 深圳市南山区科技园</p>
+                    <p><i class="fas fa-phone"></i> 0755-88888888</p>
+                    <p><i class="fas fa-envelope"></i> info@jianzhuang.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>服务项目</h3>
+                    <a href="#">住宅软装设计</a>
+                    <a href="#">商业空间设计</a>
+                    <a href="#">办公空间设计</a>
+                    <a href="#">酒店设计</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 深圳市建装冠美软装艺术有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-         // 加载导航栏
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
+        // 滚动动画
+        function checkScroll() {
+            const elements = document.querySelectorAll('.service-item, .process-step-horizontal');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
                 
-                // 设置当前页面导航激活状态
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                const navLinks = document.querySelectorAll('.nav-menu a');
-                navLinks.forEach(link => {
-                    const linkHref = link.getAttribute('href');
-                    if (currentPage === linkHref) {
-                        link.classList.add('active');
-                    }
-                });
-                
-                // 移动端菜单切换
-                const menuToggle = document.querySelector('.menu-toggle');
-                const navMenu = document.querySelector('.nav-menu');
-                
-                menuToggle.addEventListener('click', () => {
-                    menuToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
             });
-        // 加载页脚
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
+        }
+        
+        // 初始化元素状态
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.service-item, .process-step-horizontal');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             });
+            
+            // 初始检查
+            checkScroll();
+        });
+        
+        window.addEventListener('scroll', checkScroll);
     </script>
 </body>
 </html>
